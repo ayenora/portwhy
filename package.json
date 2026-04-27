@@ -1,9 +1,16 @@
 {
   "name": "portwhy",
+  "type": "module",
   "version": "0.0.2",
   "description": "Explain why a port is busy",
   "bin": {
     "portwhy": "bin/portwhy.js"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint bin/"
+  },
+  "devDependencies": {
+    "eslint": "^9"
+  }
 }
