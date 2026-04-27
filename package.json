@@ -1,0 +1,9 @@
+{
+  "name": "portwhy",
+  "version": "0.0.2",
+  "description": "Explain why a port is busy",
+  "bin": {
+    "portwhy": "bin/portwhy.js"
+  },
+  "license": "MIT"
+}
