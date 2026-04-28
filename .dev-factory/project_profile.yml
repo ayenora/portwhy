@@ -1,7 +1,6 @@
 project:
   name: portwhy
   repo: ayenora/portwhy
-  root: 
   base_branch: main
 
 task_source:
