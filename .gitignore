@@ -50,3 +50,6 @@ CLAUDE.md
 .worktrees/
 .ai/tasks/*/
 !.ai/tasks/.gitkeep
+
+# dev-factory transient artifacts
+.ai/intake/

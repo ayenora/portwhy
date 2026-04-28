@@ -67,3 +67,5 @@ agents:
       tool: claude
     reviewer:
       tool: codex
+    intake:
+      tool: codex
