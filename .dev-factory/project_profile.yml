@@ -1,0 +1,70 @@
+project:
+  name: portwhy
+  repo: ayenora/portwhy
+  root: 
+  base_branch: main
+
+task_source:
+  provider: github_issues
+  repo: ayenora/portwhy
+  state_labels:
+    - backlog
+    - needs-spec
+    - needs-clarification
+    - ready-for-dev
+    - in-review
+    - needs-fix
+    - human-qa
+    - blocked
+    - done
+
+context:
+  required_files:
+    - README.md
+  optional_files:
+    - CLAUDE.md
+    - docs/architecture.md
+    - docs/api.md
+  ignore_paths:
+    - node_modules
+    - dist
+    - build
+    - .next
+    - .git
+    - .worktrees
+
+commands:
+  lint: "npm run lint"
+  typecheck: ""
+  test: ""
+  build: ""
+
+limits:
+  max_fix_iterations: 3
+  poll_interval_seconds: 60
+
+agents:
+  tools:
+    codex:
+      provider: codex_cli
+      command: codex
+      mode: exec
+      options: {}
+    claude:
+      provider: claude_cli
+      command: claude
+      mode: print
+      options:
+        allowed_tools:
+          - Read
+          - Edit
+          - Write
+          - Bash(git add:*)
+          - Bash(git commit:*)
+  roles:
+    speccer:
+      tool: codex
+    developer:
+      tool: claude
+    reviewer:
+      tool: codex

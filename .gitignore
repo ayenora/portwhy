@@ -45,3 +45,8 @@ CLAUDE.md
 # Environment
 .env
 .env.local
+
+# dev-factory transient artifacts
+.worktrees/
+.ai/tasks/*/
+!.ai/tasks/.gitkeep
